@@ -5,12 +5,16 @@ window.onload = function () {
   let productDropdown = document.getElementById("productDropdown");
   productDropdown.onchange = productDropdownOnChange;
 
+  let categoryDropdown = document.getElementById("categoryDropdown")
+  categoryDropdown.onchange = displayCategoryProductOnChange;
+
 
   populateProductDropdown();
 
   document.getElementById("displayTable").style.display = "none"
   document.getElementById("categoryDropdown").style.display = "none"
   document.getElementById("searchDropdown").style.display = "none"
+
 
 
 }
@@ -43,7 +47,7 @@ function populateProductDropdown() {
 function displayCategory() {
 
   let categoryDropdown = document.getElementById("categoryDropdown")
-
+  document.getElementById("categoryDropdown").innerHTML= "";
 
   fetch("http://localhost:8081/api/categories")
     .then(response => response.json())
@@ -57,7 +61,7 @@ function displayCategory() {
       for (let all of data) {
 
         let newOption = document.createElement("option");
-        newOption.value = all.name;
+        newOption.value = all.categoryId;
         newOption.textContent = all.name;
         categoryDropdown.appendChild(newOption);
 
@@ -78,10 +82,10 @@ function displayAllProduct() {
     .then(data => {
       for (let i = 0; i < data.length; i++) {
         let row = displayTable.insertRow(-1);
-       
+
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
-        
+
         cell1.innerHTML = data[i].productName;
 
 
@@ -101,7 +105,7 @@ function displayAllProduct() {
 
 function productDropdownOnChange() {
 
-
+  document.getElementById("displayCategory").innerHTML= "";
   let searchFilter = document.getElementById("productDropdown").value;
 
 
@@ -130,5 +134,46 @@ function productDropdownOnChange() {
 
 
 }
+
+
+function displayCategoryProductOnChange() {
+
+  document.getElementById("displayCategory").innerHTML= "";
+  let categoryDropdown = document.getElementById("categoryDropdown").value
+
+  let displayCategory = document.getElementById("displayCategory")
+
+
+
+  fetch("http://localhost:8081/api/products")
+    .then(response => response.json())
+    .then(data => {
+
+      for (let category of data) {
+
+        if (categoryDropdown == category.categoryId) {
+
+          let row = displayCategory.insertRow(-1);
+          let cell1 = row.insertCell(0);
+          let cell2 = row.insertCell(1);
+          let cell3 = row.insertCell(2);
+          let cell4 = row.insertCell(3);
+          let cell5 = row.insertCell(4);
+          cell1.innerHTML = category.productId;
+          cell2.innerHTML = category.productName;
+          cell3.innerHTML = category.unitPrice;
+          cell4.innerHTML = category.unitsInStock;
+          cell5.innerHTML = category.supplier;
+
+
+        }
+
+
+      }
+    })
+
+}
+
+
 
 
