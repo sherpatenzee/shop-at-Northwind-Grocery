@@ -79,11 +79,28 @@ function displayAllProduct() {
   fetch("http://localhost:8081/api/products")
     .then(response => response.json())
     .then(data => {
+      
+      data.sort((a, b) => {
+        
+        let nameA = a.productName.toLowerCase(),
+            nameB = b.productName.toLowerCase();
+    
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+
       for (let i = 0; i < data.length; i++) {
         let row = displayTable.insertRow(-1);
 
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
+
+       
 
         cell1.innerHTML = data[i].productName;
 
@@ -135,8 +152,6 @@ function productDropdownOnChange() {
 
 function displayCategoryProductOnChange() {
 
-
-
   let categoryDropdown = document.getElementById("categoryDropdown").value
 
   let displayCategory = document.getElementById("displayCategory")
@@ -155,6 +170,20 @@ function displayCategoryProductOnChange() {
     .then(response => response.json())
     .then(data => {
       for (let category of data) {
+        data.sort((a, b) => {
+        
+          let nameA = a.productName.toLowerCase(),
+              nameB = b.productName.toLowerCase();
+      
+          if (nameA < nameB) {
+              return -1;
+          }
+          if (nameA > nameB) {
+              return 1;
+          }
+          return 0;
+      });
+  
 
         if (categoryDropdown == category.categoryId) {
 
@@ -178,8 +207,16 @@ function displayCategoryProductOnChange() {
     })
   displayCategory.style.display = "block"
 
+
+  
+  if (categoryDropdown == "") {
+
+    document.getElementById("displayTable").style.display = "none"
+    document.getElementById("displayCategory").style.display = "none"
+
+  }
+
+
+
 }
-
-
-
 
