@@ -1,54 +1,81 @@
-h1{
+h1 {
   text-align: center;
-  color:rgb(88, 86, 83);
+  color: rgb(88, 86, 83);
   color: antiquewhite;
-  
+
 }
 
-img{
+img {
   height: 300px;
 }
 
-.py-40{
+.py-40 {
   background-image: url(../image/daria-volkova-pBdbqG3tJGQ-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 400px;
+  
 
 
 }
-td{
+
+td {
   width: 2000px;
   text-align: center;
   border: 1px solid black;
   padding: 5px;
- 
+
 
 }
 
 
-table{
+table {
   margin: auto;
   background-color: rgba(255, 228, 196, 0.412);
   padding: 25px;
   margin-top: 25px;
   text-align: center;
-  font-weight: 300;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-  
+  font-weight: 600;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 
-th{
-
+th {
+  color: rgb(13, 116, 97);
   font-weight: 900;
-  font-size:x-large;
- text-decoration-line: underline;
+  font-size: x-large;
+  text-decoration-line: underline;
 }
 
-footer{
+footer {
   background-color: rgba(43, 137, 14, 0.383);
 }
 
 
+
+h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: rgb(13, 116, 97);
+
+}
+
+#tableBg{
+  background-image: url(../image/no-revisions-ixS7UCRJTdM-unsplash.jpg) ;
+  background-repeat: no-repeat;
+background-position: center;
+}
+
+#mainId{
+  margin: 75px;
+  padding: 25px;
+  background-color: rgb(13, 116, 97);
+}
+
+#paragraph{
+
+  margin-left: 100px;
+  margin-right: 100px;
+}
 

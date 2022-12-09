@@ -143,6 +143,7 @@ function productDropdownOnChange() {
 
     document.getElementById("displayTable").style.display = "none"
     document.getElementById("categoryDropdown").style.display = "none"
+    document.getElementById("displayCategory").style.display = "none"
 
   }
 
@@ -198,7 +199,6 @@ function displayCategoryProductOnChange() {
           cell3.innerHTML = category.unitPrice;
           cell4.innerHTML = category.unitsInStock;
           cell5.innerHTML = category.supplier;
-
 
         }
 
