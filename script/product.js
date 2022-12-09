@@ -13,7 +13,7 @@ window.onload = function () {
 
   document.getElementById("displayTable").style.display = "none"
   document.getElementById("categoryDropdown").style.display = "none"
-  document.getElementById("searchDropdown").style.display = "none"
+
 
 
 
@@ -43,11 +43,10 @@ function populateProductDropdown() {
 }
 
 
-
 function displayCategory() {
 
   let categoryDropdown = document.getElementById("categoryDropdown")
-  document.getElementById("categoryDropdown").innerHTML= "";
+  document.getElementById("categoryDropdown").innerHTML = "";
 
   fetch("http://localhost:8081/api/categories")
     .then(response => response.json())
@@ -72,10 +71,10 @@ function displayCategory() {
 }
 
 
-
 function displayAllProduct() {
 
   let displayTable = document.getElementById("displayTable");
+  document.getElementById('displayCategory').style.display = 'none';
 
   fetch("http://localhost:8081/api/products")
     .then(response => response.json())
@@ -87,7 +86,6 @@ function displayAllProduct() {
         let cell2 = row.insertCell(1);
 
         cell1.innerHTML = data[i].productName;
-
 
         let anchor = document.createElement("a");
         anchor.href = `details.html?productId=${data[i].productId}`;
@@ -105,7 +103,6 @@ function displayAllProduct() {
 
 function productDropdownOnChange() {
 
-  document.getElementById("displayCategory").innerHTML= "";
   let searchFilter = document.getElementById("productDropdown").value;
 
 
@@ -138,17 +135,25 @@ function productDropdownOnChange() {
 
 function displayCategoryProductOnChange() {
 
-  document.getElementById("displayCategory").innerHTML= "";
+
+
   let categoryDropdown = document.getElementById("categoryDropdown").value
 
   let displayCategory = document.getElementById("displayCategory")
 
 
-
+  displayCategory.innerHTML = `
+  <tr>
+<th>Product No.</th>
+<th>Name</th>
+<th>Unit Price</th>
+<th>In Stock</th>
+<th>Supplier</th>
+  </tr>
+  `
   fetch("http://localhost:8081/api/products")
     .then(response => response.json())
     .then(data => {
-
       for (let category of data) {
 
         if (categoryDropdown == category.categoryId) {
@@ -171,6 +176,7 @@ function displayCategoryProductOnChange() {
 
       }
     })
+  displayCategory.style.display = "block"
 
 }
 

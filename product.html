@@ -15,31 +15,36 @@
 
 <body>
   
-<nav>
-  <ul class="nav justify-content-center">
-    
-    <li class="nav-item">
-      <a class="nav-link text-decoration-underline" href="home.html">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-decoration-underline" href="product.html">Product Search</a>
-    </li>
-  
-  </ul>
-</nav>
+  <nav>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <span class="d-flex align-items-center mb- mb-md-0 me-md-auto text-dark text-decoration-none m-3">
+       <h2>Northwind Grocery</h2> 
+      </span>
 
-<main class="container">
+      <ul class="nav nav-pills ">
+        <li class="nav-item"><a href="home.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="product.html" class="nav-link">Products</a></li>
+        
+      </ul>
+    </header>
+  </nav>
 
-<select  id="productDropdown"></select>
+<main class="container ">
 
-<select  id="categoryDropdown"></select>
+<select  id="productDropdown" class="form-select text-center bg-dark  text-white "  ></select>
+
+<select  id="categoryDropdown" class="form-select text-center bg-dark  text-white mt-2 mb-2"></select>
 
 
 <table id="displayTable">
-  
+  <tr>
+    <th>Name</th>
+    <th>Details</th>
+  </tr>
 </table>
 
-<table id="displayCategory"></table>
+<table id="displayCategory" style="display: none;">
+</table>
 
 </main>
 

@@ -9,7 +9,7 @@ img{
   height: 300px;
 }
 
-.py-4{
+.py-40{
   background-image: url(../image/daria-volkova-pBdbqG3tJGQ-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,4 +17,39 @@ img{
 
 
 }
+td{
+  width: 2000px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+ 
+
+}
+
+
+table{
+  margin: auto;
+  background-color: rgba(255, 228, 196, 0.412);
+  padding: 25px;
+  margin-top: 25px;
+  text-align: center;
+  font-weight: 300;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  
+}
+
+
+th{
+
+  font-weight: 900;
+  font-size:x-large;
+ text-decoration-line: underline;
+}
+
+footer{
+  background-color: rgba(43, 137, 14, 0.383);
+}
+
+
+
 
