@@ -80,19 +80,7 @@ function displayAllProduct() {
     .then(response => response.json())
     .then(data => {
       
-      data.sort((a, b) => {
-        
-        let nameA = a.productName.toLowerCase(),
-            nameB = b.productName.toLowerCase();
-    
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-        return 0;
-    });
+      sort(data);
 
       for (let i = 0; i < data.length; i++) {
         let row = displayTable.insertRow(-1);
@@ -171,19 +159,7 @@ function displayCategoryProductOnChange() {
     .then(response => response.json())
     .then(data => {
       for (let category of data) {
-        data.sort((a, b) => {
-        
-          let nameA = a.productName.toLowerCase(),
-              nameB = b.productName.toLowerCase();
-      
-          if (nameA < nameB) {
-              return -1;
-          }
-          if (nameA > nameB) {
-              return 1;
-          }
-          return 0;
-      });
+        sort(data);
   
 
         if (categoryDropdown == category.categoryId) {
@@ -220,3 +196,19 @@ function displayCategoryProductOnChange() {
 
 }
 
+function sort(data){
+
+  data.sort((a, b) => {
+        
+    let nameA = a.productName.toLowerCase(),
+        nameB = b.productName.toLowerCase();
+
+    if (nameA < nameB) {
+        return -1;
+    }
+    if (nameA > nameB) {
+        return 1;
+    }
+    return 0;
+});
+}

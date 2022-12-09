@@ -1,14 +1,27 @@
-
-h1{
+h1 {
   text-align: center;
 }
 
-p{
+p {
   text-align: center;
-  background-color:bisque;
-  font-size: large;
-  font-family:monospace;
+  font-size: x-large;
+  font-family: monospace;
   padding: 25px;
-  
+  font-weight: 700;
+
 }
 
+#bg {
+  background-image: url(../image/kelly-sikkema-VyUdiYH5tiY-unsplash.jpg);
+  background-position: 1px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+footer {
+  background-color: rgba(43, 137, 14, 0.383);
+  margin:10px;
+  border-radius: 15px;
+  padding: 25px;
+}

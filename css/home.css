@@ -15,9 +15,6 @@ img {
   background-size: cover;
   background-position: center;
   height: 400px;
-  
-
-
 }
 
 td {
@@ -50,7 +47,11 @@ th {
 
 footer {
   background-color: rgba(43, 137, 14, 0.383);
+  margin:10px;
+  border-radius: 15px;
+  padding: 25px;
 }
+
 
 
 
@@ -70,7 +71,7 @@ background-position: center;
 #mainId{
   margin: 75px;
   padding: 25px;
-  background-color: rgb(13, 116, 97);
+  background-color: rgba(44, 45, 45, 0.943);
 }
 
 #paragraph{
